@@ -17,9 +17,9 @@ namespace DotNetCrud.Controllers
 
         [HttpGet]
         [Route("employees")]
-        public ActionResult<List<Employee>> GetAllEmployees()
+        public async Task<IActionResult> GetAllEmployees()
         {
-            return Ok(_employeeRepo.getAllEmployees());
+            return Ok(await _employeeRepo.getAllEmployees());
         }
 
         [HttpPost]
